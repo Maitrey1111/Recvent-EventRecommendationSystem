@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block title %} Home {% endblock %} {% block content
+%}
+<h1>Welcome to Home page</h1>
+<form id="form" method="POST">
+  <select name="event">
+    <!-- <option selected value="Ritviz – ‘Mimmi’ Album Launch Tour">--</option> -->
+    {%for i in range(0, total_events)%}
+    <option value="{{events[i]}}">{{events[i]}}</option>
+    {%endfor%}
+    <!-- <option value="pune">Pune</option>
+    <option value="bangalore">Bangalore</option>
+    <option value="bangalore">Mumbai</option> -->
+  </select>
+  <input id="btn" type="submit" />
+</form>
+
+<h5>Selected event: {{selected_event}}</h5>
+{%for i in range(0, len)%}
+<li>{{output[i]}}</li>
+{%endfor%} {% endblock %}
